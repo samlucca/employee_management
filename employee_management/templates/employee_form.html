@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Employee Management Form</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="new_employee_code">New Employee Code:</label>
+                    <input type="text" class="form-control" id="new_employee_code" name="new_employee_code" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="old_employee_code">Old Employee Code:</label>
+                    <input type="text" class="form-control" id="old_employee_code" name="old_employee_code">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="sap_code">SAP Code:</label>
+                    <input type="text" class="form-control" id="sap_code" name="sap_code" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="surname">Surname:</label>
+                    <input type="text" class="form-control" id="surname" name="surname" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="gender">Gender (M/F/T):</label>
+                    <select class="form-control" id="gender" name="gender" required>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="T">Transgender</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="date_of_joining">Date of Joining (DD-MM-YYYY):</label>
+                    <input type="text" class="form-control" id="date_of_joining" name="date_of_joining" placeholder="DD-MM-YYYY" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="date_of_birth">Date of Birth (DD-MM-YYYY):</label>
+                    <input type="text" class="form-control" id="date_of_birth" name="date_of_birth" placeholder="DD-MM-YYYY" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="department">Department:</label>
+                    <input type="text" class="form-control" id="department" name="department" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="cost_centre_code">Cost Centre Code:</label>
+                    <input type="text" class="form-control" id="cost_centre_code" name="cost_centre_code">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="designation">Designation:</label>
+                    <input type="text" class="form-control" id="designation" name="designation" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="reporting_hod_emp_code">Reporting HOD Employee Code:</label>
+                    <input type="text" class="form-control" id="reporting_hod_emp_code" name="reporting_hod_emp_code">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="contact_no">Contact No:</label>
+                    <input type="text" class="form-control" id="contact_no" name="contact_no" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="location">Location:</label>
+                    <input type="text" class="form-control" id="location" name="location" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="unit">Unit:</label>
+                    <input type="text" class="form-control" id="unit" name="unit" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="marital_status">Marital Status:</label>
+                    <select class="form-control" id="marital_status" name="marital_status" required>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Divorced">Divorced</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="highest_education">Highest Education:</label>
+                    <input type="text" class="form-control" id="highest_education" name="highest_education" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="permanent_address">Permanent Address:</label>
+                    <textarea class="form-control" id="permanent_address" name="permanent_address" required></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="current_address">Current Address:</label>
+                    <textarea class="form-control" id="current_address" name="current_address" required></textarea>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="status">Status:</label>
+                    <input type="text" class="form-control" id="status" name="status" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="grade">Grade:</label>
+                    <input type="text" class="form-control" id="grade" name="grade" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="last_medical_date">Last Medical Date:</label>
+                    <input type="text" class="form-control" id="last_medical_date" name="last_medical_date" placeholder="DD-MM-YYYY">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="locker_no">Locker No:</label>
+                    <input type="text" class="form-control" id="locker_no" name="locker_no">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="esic_eligibility">ESIC Eligibility (Yes/No):</label>
+                    <select class="form-control" id="esic_eligibility" name="esic_eligibility" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="esic_number">ESIC Number:</label>
+                    <input type="text" class="form-control" id="esic_number" name="esic_number">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pf_number">P.F. Number:</label>
+                    <input type="text" class="form-control" id="pf_number" name="pf_number">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="pf_account_no">P.F. Account No:</label>
+                    <input type="text" class="form-control" id="pf_account_no" name="pf_account_no">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pf_uan_number">P.F. UAN Number:</label>
+                    <input type="text" class="form-control" id="pf_uan_number" name="pf_uan_number">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="bank">Bank:</label>
+                    <input type="text" class="form-control" id="bank" name="bank" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="bank_account_number">Bank Account Number:</label>
+                    <input type="text" class="form-control" id="bank_account_number" name="bank_account_number" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="aadhaar_card">Aadhaar Card:</label>
+                    <input type="text" class="form-control" id="aadhaar_card" name="aadhaar_card" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pan_card">PAN Card:</label>
+                    <input type="text" class="form-control" id="pan_card" name="pan_card" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employee_type">Employee Type (Staff/Worker):</label>
+                    <select class="form-control" id="employee_type" name="employee_type" required>
+                        <option value="Staff">Staff</option>
+                        <option value="Worker">Worker</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="contractor_name">Contractor Name:</label>
+                    <input type="text" class="form-control" id="contractor_name" name="contractor_name">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="contractor_code">Contractor Code:</label>
+                    <input type="text" class="form-control" id="contractor_code" name="contractor_code">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Employee</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
