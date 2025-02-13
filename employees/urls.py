@@ -1,10 +1,12 @@
+
+from django.contrib import admin
 from django.urls import path
-from . import views
+from employees import views
 
 urlpatterns = [
-    path('', views.employee_list, name='employee_list'),
-    path('add/', views.add_employee, name='add_employee'),
-    path('edit/<int:employee_id>/', views.edit_employee, name='edit_employee'),
-    path('delete/<int:employee_id>/', views.delete_employee, name='delete_employee'),
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),  # Add this line for the root path
+    path('save/', views.save_employee, name='save_employee'),
     path('search/', views.search_employee, name='search_employee'),
+    path('import_excel/', views.import_excel, name='import_excel'),  # Add this line for importing Excel files
 ]
